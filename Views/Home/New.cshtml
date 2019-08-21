@@ -1,0 +1,54 @@
+@model Wedding
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wedding</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <h1>Plan Your Wedding</h1>
+        </div>
+        <div class="col-md-3 text-right">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="col-md-3 text-right">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form asp-action="Add" asp-controller="Home" method="post">
+                    <span asp-validation-for="BrideName" class="text-danger mr-4"></span>
+                    <div class="form-group">
+                        <label asp-for="BrideName">Bride Name</label>
+                        <input type="text" class="form-control" id="BrideName" asp-for="BrideName">
+                    </div>
+                    <span asp-validation-for="GroomName" class="text-danger mr-4"></span>
+                    <div class="form-group">
+                        <label asp-for="GroomName">Groom Name</label>
+                        <input type="text" class="form-control" id="GroomName" asp-for="GroomName">
+                    </div>
+                    <span asp-validation-for="Date" class="text-danger mr-4"></span>
+                    <div class="form-group">
+                        <label asp-for="Date">Date</label>
+                        <input type="date" class="form-control" id="Date" asp-for="Date">
+                    </div>
+                    <span asp-validation-for="Address" class="text-danger mr-4"></span>
+                    <div class="form-group">
+                        <label asp-for="Address">Wedding Address</label>
+                        <input type="text" class="form-control" id="Address" asp-for="Address">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

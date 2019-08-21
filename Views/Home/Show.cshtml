@@ -1,0 +1,29 @@
+@model Wedding
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wedding Planner</title>
+</head>
+<body>
+    <div class="row">
+        <h1>@Model.BrideName & @Model.GroomName's Wedding</h1>
+        <div class="col-md-3 text-right">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="col-md-3 text-right">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <br>
+    <h3>Date: @Model.Date.ToString("MMMM dd, yyyy")</h3>
+    <br>
+    <h3>Guests:</h3>
+    @foreach (var guest in @Model.Guests)
+    {
+    <p>@guest.GuestInfo.FirstName @guest.GuestInfo.LastName</p>
+    }
+</body>
+</html>
